@@ -45,7 +45,7 @@ public abstract class Dragon {
 
     @Override
     public String toString() {
-        return "Dragon{" + "nombre=" + nombre + ", nombreEspecie=" + nombreEspecie + ", jinete=" + jinete + '}';
+        return nombre + "(" + nombreEspecie +")\n" + "Jinete" + jinete + "\n";
     }
     
     

@@ -9,6 +9,7 @@ package ex1p2_leonardobenavides;
  * @author leobe
  */
 public class DragonPiedra extends Dragon {
+
     private double resistencia;
     private double armadura;
 
@@ -23,9 +24,9 @@ public class DragonPiedra extends Dragon {
     }
 
     public void setResistencia(double resistencia) {
-        if(this.resistencia>=100&&this.resistencia<=200){
+        if (this.resistencia >= 100 && this.resistencia <= 200) {
             this.resistencia = resistencia;
-        }else{
+        } else {
             System.out.println("Resistencia fuera de rango, debe estar entre 100 y 200");
         }
     }
@@ -35,17 +36,19 @@ public class DragonPiedra extends Dragon {
     }
 
     public void setArmadura(double armadura) {
-       if(this.armadura>=300&&this.resistencia<=500){
+        if (this.armadura >= 300 && this.resistencia <= 500) {
             this.armadura = armadura;;
-       }else{
-           System.out.println("Armadura fuera de rango, debe estar entre 300 y 500");
-       }
+        } else {
+            System.out.println("Armadura fuera de rango, debe estar entre 300 y 500");
+        }
     }
 
     @Override
     public String toString() {
-        return "DragonPiedra{" + "resistencia=" + resistencia + ", armadura=" + armadura + '}';
+        return super.toString() + "Dragon de clase piedra \n "
+                + "Armadura: " + armadura + ""
+                + "\nResistencia: " + resistencia;
+               
     }
-    
-    
+
 }

@@ -39,10 +39,10 @@ public class DragonAfilado extends Dragon {
     }
 
     public void setPrecision(double precision) {
-        
-        if(this.precision>=0&&this.precision<=1.0){
+
+        if (this.precision >= 0 && this.precision <= 1.0) {
             this.precision = precision;
-        }else{
+        } else {
             System.out.println("Precision fuera de rango, el valor debe estar entre 0 y 1");
         }
     }
@@ -57,7 +57,10 @@ public class DragonAfilado extends Dragon {
 
     @Override
     public String toString() {
-        return "DragonAfilado{" + "numeroEspinas=" + numeroEspinas + ", precision=" + precision + ", venenoso=" + venenoso + '}';
+        return super.toString() + "Dragon de clase afilada \n "
+                + "Cantidad de Espinas: " + numeroEspinas + ""
+                + "\nPrecision " + precision;
+               
     }
 
 }

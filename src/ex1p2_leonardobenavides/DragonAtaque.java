@@ -62,7 +62,10 @@ public class DragonAtaque extends Dragon {
 
     @Override
     public String toString() {
-        return "DragonAtaque{" + "poderAtaque=" + poderAtaque + ", agilidad=" + agilidad + ", velocidad=" + velocidad + '}';
+        return super.toString() + "Dragon de clase ataque\n " 
+                + "Velocidad: " + velocidad + ""
+                + "\nPoder de ataque: " + poderAtaque + 
+                    "\n Agilidad" + agilidad;
     }
 
 }

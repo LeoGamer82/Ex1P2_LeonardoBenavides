@@ -19,6 +19,7 @@ public class Ex1P2_LeonardoBenavides {
         Queue<Dragon> dragones = new LinkedList<>();
         Map<String, Pagina> mapaLibro = new HashMap<>();
         ArrayList<Dragon> dragonesJinete = new ArrayList<>();
+        
         boolean continuar = true;
         Scanner leer = new Scanner(System.in);
         System.out.print("Ingrese su nombre: ");
@@ -154,32 +155,81 @@ public class Ex1P2_LeonardoBenavides {
         leer.nextLine();
         String jinete = leer.nextLine();
         dragon.setJinete(jinete);
-        dragones.poll();
+        System.out.println("Ahora el jinete de " + dragon.getNombreEspecie() + "es " + dragon.getJinete());
+        dragones.remove();
         dragonesJinete.add(dragon);
+        
     }
 
     public static void leerLibro() {
         Scanner leer = new Scanner(System.in);
+        
     }
 
-    public static void buscarEspecie() {
+    public static void buscarEspecie(ArrayList<Dragon> dragonesJinete, Map<String,Pagina> mapaLibro) {
         Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese especie para buscar: ");
+        leer.nextLine();
+        String especie = leer.nextLine();
+        System.out.println("Entrada en la libro de dragones: ");
+        for (int indice = 0; indice < mapaLibro.size(); indice++) {
+            if(mapaLibro.containsKey(especie)){
+                Pagina pagina = mapaLibro.get(especie);
+                System.out.println(pagina.toString());
+            }
+        }
+        System.out.println("--Dragones entrenados de esta especie -- ");
+        for (Dragon dragones : dragonesJinete) {
+             if(dragones.getNombreEspecie().equals(especie)){
+                 System.out.println(dragones);
+             }
+        }
     }
 
-    public static void listarDragones() {
+    public static void listarDragones(ArrayList<Dragon> dragonesJinete, Map<String,Pagina> mapaLibro) {
         Scanner leer = new Scanner(System.in);
+        
+        System.out.println("Como desea listar los dragones ");
+        System.out.println("0. Todos los dragones ");
+        System.out.println("1. Dragones de clase ataque ");
+        System.out.println("2. Dragones de clase afilada ");
+        System.out.println("3. Dragones de clase piedra ");
+        int opcion = leer.nextInt();
+        switch(opcion){
+            case 0:
+                for(Dragon dragones: dragonesJinete){
+                    System.out.println(dragones);
+                }
+                
+                break;
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            default:
+                System.out.println("Opcion invalida intente de nuevo ");
+    }
+        
     }
 
     public static void liberarDragones() {
         Scanner leer = new Scanner(System.in);
+        
     }
 
     public static void competenciaDeDragones() {
         Scanner leer = new Scanner(System.in);
+        
     }
 
     public static void peleaDeDragones() {
         Scanner leer = new Scanner(System.in);
+        
     }
 
 }
