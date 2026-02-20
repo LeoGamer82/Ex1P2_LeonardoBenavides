@@ -18,7 +18,7 @@ public class Ex1P2_LeonardoBenavides {
     public static void main(String[] args) {
         Queue<Dragon> dragones = new LinkedList<>();
         Map<String, Pagina> mapaLibro = new HashMap<>();
-
+        ArrayList<Dragon> dragonesJinete = new ArrayList<>();
         boolean continuar = true;
         Scanner leer = new Scanner(System.in);
         System.out.print("Ingrese su nombre: ");
@@ -141,13 +141,21 @@ public class Ex1P2_LeonardoBenavides {
 
                 mapaLibro.put(especie, pagina);
                 dragones.add(dragonPiedra);
+                
                 break;
         }
 
     }
 
-    public static void asignarJinete() {
+    public static void asignarJinete(Queue<Dragon> dragones, ArrayList<Dragon> dragonesJinete) {
         Scanner leer = new Scanner(System.in);
+        Dragon dragon = dragones.element();
+        System.out.println("Ingrese nombre de jinete al" + dragon.getNombreEspecie() + dragon.getNombre());
+        leer.nextLine();
+        String jinete = leer.nextLine();
+        dragon.setJinete(jinete);
+        dragones.poll();
+        dragonesJinete.add(dragon);
     }
 
     public static void leerLibro() {
