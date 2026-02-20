@@ -200,7 +200,6 @@ public class Ex1P2_LeonardoBenavides {
                 for (Dragon dragones : dragonesJinete) {
                     System.out.println(dragones);
                 }
-
                 break;
             case 1:
                 for (Dragon dragonAtaque : dragonesJinete) {
@@ -229,9 +228,22 @@ public class Ex1P2_LeonardoBenavides {
 
     }
 
-    public static void liberarDragones() {
+    public static void liberarDragones(ArrayList<Dragon> dragonesJinete, Map<String, Pagina> mapaLibro) {
         Scanner leer = new Scanner(System.in);
-
+        System.out.println("Uno de los dragones de berk desea irse! ");
+        for(Dragon dragones: dragonesJinete){
+            System.out.println(dragones);
+        }
+        System.out.println("Cual dragon desea irse ");
+        int seleccionar = leer.nextInt();
+        
+        if(seleccionar>=0&&seleccionar<=dragonesJinete.size()){
+            System.out.println("El siguiente dragon se fue de berk ");
+            dragonesJinete.get(seleccionar);
+            dragonesJinete.remove(seleccionar);
+            
+        }
+        
     }
 
     public static void competenciaDeDragones() {
