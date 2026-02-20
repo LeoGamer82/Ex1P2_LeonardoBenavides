@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ex1p2_leonardobenavides;
-
+import java.util.Random;
 /**
  *
  * @author leobe
@@ -53,6 +53,25 @@ public class DragonAfilado extends Dragon {
 
     public void setVenenoso(boolean venenoso) {
         this.venenoso = venenoso;
+    }
+    
+    public double prueba(){
+        Random random = new Random();
+        double puntosTotal = 0;
+        for (int blancos = 1; blancos <= 10; blancos++) {
+            double chancePrecision = random.nextDouble(0, precision);
+            if(chancePrecision == precision){
+                puntosTotal += 100;
+                System.out.println("La espina dio en el blanco " + blancos);    
+            }else{
+                System.out.println("La espina no dio en el blanco" +  blancos);
+            }
+        }
+        if(venenoso){
+            return puntosTotal * 1.5;
+        }else{
+            return puntosTotal;
+        }  
     }
 
     @Override

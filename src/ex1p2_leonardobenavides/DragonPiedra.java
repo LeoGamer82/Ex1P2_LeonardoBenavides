@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ex1p2_leonardobenavides;
-
+import java.util.Random;
 /**
  *
  * @author leobe
@@ -41,6 +41,9 @@ public class DragonPiedra extends Dragon {
         } else {
             System.out.println("Armadura fuera de rango, debe estar entre 300 y 500");
         }
+    }
+    public double prueba(){
+        
     }
 
     @Override

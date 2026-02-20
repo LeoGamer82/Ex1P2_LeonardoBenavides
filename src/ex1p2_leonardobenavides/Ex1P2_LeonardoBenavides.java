@@ -29,6 +29,7 @@ public class Ex1P2_LeonardoBenavides {
         do {
             switch (Menu()) {
                 case 1:
+                    agregarDragon(dragones, autor, mapaLibro);
                     break;
                 case 2:
                     break;

@@ -49,5 +49,7 @@ public abstract class Dragon {
     }
     
     
+    public abstract double prueba();
+    
     
 }

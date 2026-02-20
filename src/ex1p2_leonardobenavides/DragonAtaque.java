@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ex1p2_leonardobenavides;
-
+import java.util.Random;
 /**
  *
  * @author leobe
@@ -59,13 +59,39 @@ public class DragonAtaque extends Dragon {
         }
 
     }
+    
+    public double prueba(){
+        double puntosTotal = 0;
+        Random random = new Random();
+        double blanco1 = random.nextDouble(30,120);
+        double blanco2 = random.nextDouble(30,120);
+        double blanco3 = random.nextDouble(30,120);
+        
+        double puntosDestruirBlancos = 3 * 50;
+        double puntosBlanco1 = Math.abs(blanco1 - poderAtaque);
+        double puntosBlanco2 = Math.abs(blanco2 - poderAtaque);
+        double puntosBlanco3 = Math.abs(blanco3 - poderAtaque);
+        
+        puntosTotal += puntosBlanco1;
+        puntosTotal += puntosBlanco2;
+        puntosTotal += puntosBlanco3;
+        puntosTotal += puntosDestruirBlancos;
+        
+       double puntosObstaculos = agilidad*velocidad / 100;
+       double tiempoTardado = 1000 - puntosObstaculos;
+       
+       
+       puntosTotal += puntosObstaculos;
+       
+           
+    return puntosTotal;}
 
     @Override
     public String toString() {
         return super.toString() + "Dragon de clase ataque\n " 
                 + "Velocidad: " + velocidad + ""
                 + "\nPoder de ataque: " + poderAtaque + 
-                    "\n Agilidad" + agilidad;
+                  "\n Agilidad" + agilidad;
     }
 
 }
