@@ -15,8 +15,8 @@ public class DragonPiedra extends Dragon {
 
     public DragonPiedra(double resistencia, double armadura, String nombre, String nombreEspecie, String jinete) {
         super(nombre, nombreEspecie, jinete);
-        this.resistencia = resistencia;
-        this.armadura = armadura;
+        setResistencia(resistencia);
+        setArmadura(armadura);
     }
 
     public double getResistencia() {
@@ -42,9 +42,19 @@ public class DragonPiedra extends Dragon {
             System.out.println("Armadura fuera de rango, debe estar entre 300 y 500");
         }
     }
+    @Override
     public double prueba(){
-        
-    }
+        Random random = new Random();
+        double puntosTotales = 0;
+        double multiplicador = random.nextDouble(0.6 ,1.3);
+        double puntosResistencia = multiplicador*resistencia;
+        puntosTotales += puntosResistencia;
+        double numeroRandom = random.nextDouble(200,500);
+        while(armadura>numeroRandom){
+            puntosTotales+=100;
+            numeroRandom = random.nextDouble(200,500);
+        }
+    return puntosTotales;}
 
     @Override
     public String toString() {

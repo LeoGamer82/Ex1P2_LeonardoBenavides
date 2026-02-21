@@ -16,9 +16,9 @@ public class DragonAtaque extends Dragon {
 
     public DragonAtaque(double poderAtaque, double agilidad, double velocidad, String nombre, String nombreEspecie, String jinete) {
         super(nombre, nombreEspecie, jinete);
-        this.poderAtaque = poderAtaque;
-        this.agilidad = agilidad;
-        this.velocidad = velocidad;
+        setPoderAtaque(poderAtaque);
+        setAgilidad(agilidad);
+        setVelocidad(velocidad);
     }
 
     public double getPoderAtaque() {
@@ -60,6 +60,7 @@ public class DragonAtaque extends Dragon {
 
     }
     
+    @Override
     public double prueba(){
         double puntosTotal = 0;
         Random random = new Random();
@@ -89,7 +90,7 @@ public class DragonAtaque extends Dragon {
     @Override
     public String toString() {
         return super.toString() + "Dragon de clase ataque\n " 
-                + "Velocidad: " + velocidad + ""
+                + "Velocidad: " + velocidad + " km/h "
                 + "\nPoder de ataque: " + poderAtaque + 
                   "\n Agilidad" + agilidad;
     }

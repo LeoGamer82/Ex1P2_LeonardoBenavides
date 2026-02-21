@@ -16,8 +16,8 @@ public class DragonAfilado extends Dragon {
 
     public DragonAfilado(int numeroEspinas, double precision, boolean venenoso, String nombre, String nombreEspecie, String jinete) {
         super(nombre, nombreEspecie, jinete);
-        this.numeroEspinas = numeroEspinas;
-        this.precision = precision;
+        setNumeroEspinas(numeroEspinas);
+        setPrecision(precision);
         this.venenoso = venenoso;
     }
 
@@ -55,6 +55,7 @@ public class DragonAfilado extends Dragon {
         this.venenoso = venenoso;
     }
     
+    @Override
     public double prueba(){
         Random random = new Random();
         double puntosTotal = 0;

@@ -23,7 +23,6 @@ public class Ex1P2_LeonardoBenavides {
         boolean continuar = true;
         Scanner leer = new Scanner(System.in);
         System.out.print("Ingrese su nombre: ");
-        leer.nextLine();
         String autor = leer.nextLine();
 
         do {
@@ -32,16 +31,22 @@ public class Ex1P2_LeonardoBenavides {
                     agregarDragon(dragones, autor, mapaLibro);
                     break;
                 case 2:
+                    asignarJinete(dragones,dragonesJinete);
                     break;
                 case 3:
+                    
                     break;
                 case 4:
+                    buscarEspecie(dragonesJinete,mapaLibro);
                     break;
                 case 5:
+                    listarDragones(dragonesJinete,mapaLibro);
                     break;
                 case 6:
+                    liberarDragones(dragonesJinete,mapaLibro);
                     break;
                 case 7:
+                    competenciaDeDragones(dragonesJinete);
                     break;
                 case 8:
                     break;
@@ -65,6 +70,7 @@ public class Ex1P2_LeonardoBenavides {
         System.out.println("7. Competencia de dragones ");
         System.out.println("8. Pelea de dragones ");
         System.out.println("9. Salir ");
+        System.out.println("Ingrese su opcion: ");
         Scanner leer = new Scanner(System.in);
         int opcion = leer.nextInt();
         return opcion;
@@ -74,16 +80,15 @@ public class Ex1P2_LeonardoBenavides {
     public static void agregarDragon(Queue<Dragon> dragones, String autor, Map<String, Pagina> mapaLibro) {
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese el nombre del dragon: ");
-        leer.nextLine();
         String nombre = leer.nextLine();
         System.out.println("Ingrese la especie del dragon: ");
-        leer.nextLine();
         String especie = leer.nextLine();
 
         System.out.println("De que clase es el dragon? ");
         System.out.println("1. Clase Ataque ");
         System.out.println("2. Clase Afilada ");
         System.out.println("3. Clase Piedra ");
+        System.out.println("Ingrese su opcion ");
         int opcionClase = leer.nextInt();
 
         switch (opcionClase) {
@@ -96,12 +101,12 @@ public class Ex1P2_LeonardoBenavides {
                 System.out.println("Ingrese velocidad del dragon: (100-250) ");
                 double velocidad = leer.nextDouble();
                 DragonAtaque dragonAtaque = new DragonAtaque(poderAtaque, agilidad, velocidad, nombre, especie, " Sin Jinete ");
-                leer.nextLine();
+                System.out.println("Ingrese una descripcion:  ");
                 String descripcionAtaque = leer.nextLine();
                 Pagina pagina = new Pagina(especie, dragonAtaque, "Ataque", descripcionAtaque, 1);
                 mapaLibro.put(especie, pagina);
                 dragones.add(dragonAtaque);
-
+                
                 break;
             case 2:
                 System.out.println("Ha elegido un dragon de clase afilada ");
@@ -151,12 +156,11 @@ public class Ex1P2_LeonardoBenavides {
 
     public static void asignarJinete(Queue<Dragon> dragones, ArrayList<Dragon> dragonesJinete) {
         Scanner leer = new Scanner(System.in);
-        Dragon dragon = dragones.element();
-        System.out.println("Ingrese nombre de jinete al" + dragon.getNombreEspecie() + dragon.getNombre());
-        leer.nextLine();
+        Dragon dragon = dragones.peek();
+        System.out.println("Ingrese nombre de jinete al" + " "+ dragon.getNombreEspecie() +" " + dragon.getNombre());
         String jinete = leer.nextLine();
         dragon.setJinete(jinete);
-        System.out.println("Ahora el jinete de " + dragon.getNombreEspecie() + "es " + dragon.getJinete());
+        System.out.println("Ahora el jinete de " + dragon.getNombreEspecie() + " es " + dragon.getJinete());
         dragones.remove();
         dragonesJinete.add(dragon);
 
@@ -247,9 +251,11 @@ public class Ex1P2_LeonardoBenavides {
         
     }
 
-    public static void competenciaDeDragones() {
-        Scanner leer = new Scanner(System.in);
-
+    public static void competenciaDeDragones(ArrayList<Dragon> dragonesJinete) {
+        for (int i = 0; i < dragonesJinete.size(); i++) {
+             System.out.println(dragonesJinete.get(i).prueba());
+        }
+        
     }
 
     public static void peleaDeDragones() {
